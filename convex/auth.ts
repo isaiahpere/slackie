@@ -5,7 +5,7 @@ import { convexAuth } from "@convex-dev/auth/server";
 import { DataModel } from "./_generated/dataModel";
 
 /**
- * Creating a custom password to add name to the user model to be saved
+ * Creating a custom password to add name & email to the user model to be saved
  * in convex db.
  * for password auth docs: https://labs.convex.dev/auth/config/passwords
  */
