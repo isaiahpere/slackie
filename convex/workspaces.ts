@@ -40,3 +40,21 @@ export const get = query({
     return await ctx.db.query("workspaces").collect();
   },
 });
+
+/**
+ * Fetch a workspace by ID.
+ */
+export const getById = query({
+  args: { id: v.id("workspaces") },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+
+    if (!userId) {
+      throw new Error("Unauthorized");
+    }
+
+    // TODO: Constraint for only members of this workspace to access this
+
+    return await ctx.db.get(args.id);
+  },
+});
