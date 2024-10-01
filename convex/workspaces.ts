@@ -100,7 +100,7 @@ export const getById = query({
       )
       .unique();
 
-    if (!member) null;
+    if (!member) return null;
 
     return await ctx.db.get(args.id);
   },
